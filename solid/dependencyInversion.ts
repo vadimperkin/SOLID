@@ -82,5 +82,3 @@ from specific user pool implementations like FixedCognitoUserPool or
 FixedMicrosoftAdUserPool. This decoupling allows for greater flexibility and 
 easier maintenance.
 */
-
-
