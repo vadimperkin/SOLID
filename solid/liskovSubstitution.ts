@@ -38,7 +38,7 @@ interface IProcessPayment {
   processPayment(amount: number): boolean;
 }
 
-interface IReversePayment {
+interface IReversePayment extends IProcessPayment {
   reversePayment(amount: number): boolean;
 }
 
