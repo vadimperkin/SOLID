@@ -7,10 +7,10 @@ class DeliveryCalculator {
   public calculateDeilvery(method: DeliveryMethod, totalOrder: number) {
     if (method === DeliveryMethod.Standart) {
       return totalOrder * 0.05;
-      // 5% for standart delivery
+      // 5% for Standart delivery
     } else {
       return totalOrder * 0.1;
-      // 5% for standart delivery
+      // 10% for Express delivery
     }
   }
 }
@@ -33,21 +33,21 @@ abstract class FixedDeliveryCalculator {
 class StandartDelivery extends FixedDeliveryCalculator {
   public calculateDeilvery(totalOrder: number): number {
     return totalOrder * 0.05;
-    // 5% for standart delivery
+    // 5% for Standart delivery
   }
 }
 
 class ExpressDelivery extends FixedDeliveryCalculator {
   public calculateDeilvery(totalOrder: number): number {
     return totalOrder * 0.1;
-    // 10% for standart delivery
+    // 10% for Express delivery
   }
 }
 
 class UltrafastDelivery extends FixedDeliveryCalculator {
   public calculateDeilvery(totalOrder: number): number {
     return totalOrder * 0.2;
-    // 20% for standart delivery
+    // 20% for Ultrafast delivery
   }
 }
 /**By using abstract methods in our base class, we allow for new delivery methods
