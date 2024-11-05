@@ -9,7 +9,10 @@ class CognitoUserPool {
   userPool: User[] = [];
   findOne(username: string): User | undefined {
     const user = this.userPool.find((user) => user.username === username);
-    return user;
+    if (user) {
+      return user;
+    }
+    return undefined;
   }
 }
 
@@ -40,17 +43,23 @@ class FixedCognitoUserPool implements IUserPool {
   userPool: User[] = [];
   findOne(username: string): User | undefined {
     const user = this.userPool.find((user) => user.username === username);
-    return user;
+    if (user) {
+      return user;
+    }
+    return undefined;
   }
 }
 
 class FixedMicrosoftAdUserPool implements IUserPool {
-    userPool: User[] = [];
-    findOne(username: string): User | undefined {
-      const user = this.userPool.find((user) => user.username === username);
+  userPool: User[] = [];
+  findOne(username: string): User | undefined {
+    const user = this.userPool.find((user) => user.username === username);
+    if (user) {
       return user;
     }
+    return undefined;
   }
+}
 
 class FixedMembersService {
   constructor(private userPool: IUserPool) {}
